@@ -2,8 +2,8 @@
 ## Evento UNIBHParty - Hackathon
 
 ### Plataformas
-#### Aplicação mobile para cadastro de ocorrências e recebimento dos chamados pelo agente
-#### Aplicação Web para 
+- Aplicação mobile para cadastro de ocorrências e recebimento dos chamados pelo agente
+- Aplicação Web para 
 
 ### Descrição
 <p>
