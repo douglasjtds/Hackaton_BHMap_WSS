@@ -2,8 +2,8 @@
 ## Evento UNIBHParty - Hackathon
 
 ### Plataformas
-- Aplicação mobile para cadastro de ocorrências e recebimento dos chamados pelo agente
-- Aplicação Web para 
+- **Aplicação Mobile** para cadastro de ocorrências e recebimento dos chamados pelo agente
+- **Aplicação Web** que comunique com o App para possibilitar a consulta da localidade das ocorrências e enviar o chamado novamete para o app do agente que estiver mais próximo para atendê-la
 
 ### Descrição
 <p>
