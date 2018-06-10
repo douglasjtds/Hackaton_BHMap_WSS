@@ -60,8 +60,7 @@
         <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
             <a href="#secondGrid" class="w3-bar-item w3-button w3-padding-large">Mapa da cidade</a>
             <a href="#thirdGrid" class="w3-bar-item w3-button w3-padding-large">Contato</a>
-            @*<a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-                <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>*@
+
         </div>
     </div>
 
@@ -69,7 +68,7 @@
     <header class="w3-container w3-red w3-center" style="padding:128px 16px">
         <h1 class="w3-margin w3-jumbo">Centro Integrado de Operações de Belo Horizonte</h1>
         <p class="w3-xlarge"> (COP-BH) - Sistema de Acesso à Ocorrências</p>
-        <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Acessar mapa de ocorrências</button>
+        @*<button onclick="selectAgentes()" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Acessar mapa de agentes</button>*@
     </header>
 
     <!-- First Grid -->
@@ -101,11 +100,7 @@
     <div id="secondGrid" class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
         <h1>Mapa da Cidade</h1>
         <div class="w3-content">
-            <div class="w3-third w3-center">
-                @*<i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>*@
-                @*<div id="map" style="height: 80vH;width:90vW"></div>*@
-
-            </div>
+            <div class="w3-third w3-center"></div>
 
             <div class="w3-twothird">
 
@@ -122,7 +117,6 @@
         <div class="w3-row w3-padding-32">
             <div class="w3-col m6 w3-large w3-margin-bottom">
                 <i class="fa fa-map-marker" style="width:30px"></i> Belo Horizonte, MG<br>
-                @*<i class="fa fa-phone" style="width:30px"></i> Telefone: +00 151515<br>*@
                 <i class="fa fa-envelope" style="width:30px"> </i> Email: douglasjtds@gmail.com<br>
             </div>
             <div class="w3-col m6">
@@ -172,35 +166,7 @@
         }
     </script>
 
-    @*<script>
-        function initMap() {
-            var uluru = { lat: -19.876191, lng: -43.927003 };
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 100,
-                center: uluru
-            });
-            var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-            });
 
-            marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
-
-
-            var uluru2 = { lat: -44.03000166052033, lng: -19.91794624081266 };
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 100,
-                center: uluru2
-            });
-            var marker2 = new google.maps.Marker({
-                position: uluru2,
-                map: map
-            });
-
-            marker2.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
-
-        }
-    </script>*@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwJZ0FLdy72DnOofQOM8mPOCP4R-MhlRE&callback=initMap">
     </script>
@@ -274,7 +240,7 @@
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwJZ0FLdy72DnOofQOM8mPOCP4R-MhlRE&callback=initMap">
     </script>
 
-    @*<script src="~/Scripts/myScripts/connectFirebase.js"></script>*@
+    <script src="~/Scripts/myScripts/connectFirebase.js"></script>
 
 </body>
 </html>
