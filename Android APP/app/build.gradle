@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.example.lukecarvalho.hackaton_bhmap_wss"
+        applicationId "com.example.lukecarvalho.bhmapwss"
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
@@ -26,4 +26,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
+    implementation 'com.google.firebase:firebase-messaging:12.0.1'
 }
+apply plugin: 'com.google.gms.google-services'
