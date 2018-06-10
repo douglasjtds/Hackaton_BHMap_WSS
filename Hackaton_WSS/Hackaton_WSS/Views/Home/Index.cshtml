@@ -69,7 +69,7 @@
     <header class="w3-container w3-red w3-center" style="padding:128px 16px">
         <h1 class="w3-margin w3-jumbo">Centro Integrado de Operações de Belo Horizonte</h1>
         <p class="w3-xlarge"> (COP-BH) - Sistema de Acesso à Ocorrências</p>
-        <button onclick="#secondGrid" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Acessar mapa de ocorrências</button>
+        <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Acessar mapa de ocorrências</button>
     </header>
 
     <!-- First Grid -->
@@ -90,7 +90,7 @@
                     <li>Guarda Municipal</li>
                     <li>SLU</li>
                     <li>SAMU</li>
-                    <li>SUFIS(fiscalização)</li>
+                    <li>SUFIS (fiscalização)</li>
                 </ul>
 
             </div>
@@ -133,14 +133,14 @@
                 <form action="/action_page.php" target="_blank">
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                            <input class="w3-input w3-border" type="text" placeholder="Nome" required name="Name">
                         </div>
                         <div class="w3-half">
                             <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
                         </div>
                     </div>
-                    <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-                    <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+                    <input class="w3-input w3-border" type="text" placeholder="Mensagem" required name="Message">
+                    <button class="w3-button w3-black w3-section w3-right" type="submit">ENVIAR</button>
                 </form>
             </div>
         </div>
@@ -177,11 +177,11 @@
     </script>
 
 
-    <script>
+    @*<script>
         function initMap() {
             var uluru = { lat: -19.876191, lng: -43.927003 };
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
+                zoom: 100,
                 center: uluru
             });
             var marker = new google.maps.Marker({
@@ -192,9 +192,9 @@
             marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
 
 
-            var uluru2 = { lat: -19.863461, lng: -43.926258 };
+            var uluru2 = { lat: -44.03000166052033, lng: -19.91794624081266 };
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
+                zoom: 100,
                 center: uluru2
             });
             var marker2 = new google.maps.Marker({
@@ -205,7 +205,75 @@
             marker2.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
 
         }
+    </script>*@
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwJZ0FLdy72DnOofQOM8mPOCP4R-MhlRE&callback=initMap">
     </script>
+
+    @* Script pra mostrar mais de um ícone *@
+    <script>
+        var map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: new google.maps.LatLng(-19.873437, -43.924306),
+                mapTypeId: 'roadmap'
+            });
+
+            var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+            var mainIcon = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
+
+            var icons = {
+                parking: {
+                    icon: iconBase + 'parking_lot_maps.png'
+                },
+                library: {
+                    icon: iconBase + 'library_maps.png'
+                },
+                info: {
+                    icon: iconBase + 'info-i_maps.png'
+                },
+                yellowButton: {
+                    icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                }
+            };
+
+            var features = [
+              {
+                  position: new google.maps.LatLng(-19.876069, -43.928639),
+                  type: 'yellowButton'
+              }, {
+                  position: new google.maps.LatLng(-19.875837, -43.928060),
+                  type: 'yellowButton'
+              }, {
+                  position: new google.maps.LatLng(-19.873437, -43.924306),
+                  type: 'yellowButton'
+              }, {
+                  position: new google.maps.LatLng(-19.865839, -43.927228),
+                  type: 'yellowButton'
+              }, {
+                  position: new google.maps.LatLng(-19.863210, -43.925483),
+                  type: 'yellowButton'
+              }, {
+                  position: new google.maps.LatLng(-19.878798, -43.926089),
+                  type: 'yellowButton'
+              }, {
+                  position: new google.maps.LatLng(-19.857394, -43.941461),
+                  type: 'yellowButton'
+              }
+            ];
+
+            features.forEach(function (feature) {
+                var marker = new google.maps.Marker({
+                    position: feature.position,
+                    icon: icons[feature.type].icon,
+                    map: map
+                });
+            });
+        }
+    </script>
+
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwJZ0FLdy72DnOofQOM8mPOCP4R-MhlRE&callback=initMap">
     </script>
