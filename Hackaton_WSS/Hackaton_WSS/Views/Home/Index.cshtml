@@ -1,0 +1,280 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<title>COP Sistema de Ocorrências - Hackathon</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    .w3-bar, h1, button {
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .fa-search {
+        font-size: 200px;
+    }
+
+    #map {
+        height: 500px;
+        width: 100%;
+    }
+</style>
+
+@*<!-- Script do BHMap -->
+    <script type="text/javascript" src="http://bhmap.pbh.gov.br/v2/api/visualizador/js?aplicacao=SIOP&funcionalidade=util&layersbase=base&versao=0.0.3"></script>
+
+    <!-- Iniciar o mapa após o onload -->
+    <script type="text/javascript">
+        function init() {
+            // o parâmetro da função é o id do elemento div do mapa
+            BHMap.startMap('map')
+        }
+    </script>*@
+
+
+
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">Home</a>
+            <a href="#secondGrid" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Mapa da cidade</a>
+            <a href="#thirdGrid" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contato</a>
+            <!-- <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a> -->
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+            <a href="#secondGrid" class="w3-bar-item w3-button w3-padding-large">Mapa da cidade</a>
+            <a href="#thirdGrid" class="w3-bar-item w3-button w3-padding-large">Contato</a>
+            @*<a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+                <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>*@
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-container w3-red w3-center" style="padding:128px 16px">
+        <h1 class="w3-margin w3-jumbo">Centro Integrado de Operações de Belo Horizonte</h1>
+        <p class="w3-xlarge"> (COP-BH) - Sistema de Acesso à Ocorrências</p>
+        <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Acessar mapa de ocorrências</button>
+    </header>
+
+    <!-- First Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-content">
+            <div class="w3-twothird">
+                <h1>Propósito</h1>
+                <h5 class="w3-padding-32">Com este sistema você pode facilmente localizar o registro de uma ocorrência e direcioná-la ao agente mais próximo, para que possamos resolver os problemas de nossa cidade com maior agilidade.</h5>
+
+                <h4>Agentes Móveis</h4>
+                <ul class="w3-text-grey">
+                    <li>BHTRANS</li>
+                    <li>Defesa Civil</li>
+                    <li>Guarda Municipal</li>
+                    <li>SLU</li>
+                    <li>SAMU</li>
+                    <li>SUFIS (fiscalização)</li>
+                </ul>
+
+            </div>
+
+            <div class="w3-third w3-center">
+                <i class="fa fa-search w3-padding-64 w3-text-red"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Grid -->
+    <div id="secondGrid" class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+        <h1>Mapa da Cidade</h1>
+        <div class="w3-content">
+            <div class="w3-third w3-center">
+                @*<i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>*@
+                @*<div id="map" style="height: 80vH;width:90vW"></div>*@
+
+            </div>
+
+            <div class="w3-twothird">
+
+            </div>
+
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <!-- Third Grid -->
+    <div id="thirdGrid" class="w3-container w3-content w3-padding-64" style="max-width:800px">
+        <h2 class="w3-wide w3-center">Contato</h2>
+        <p class="w3-opacity w3-center"><i>Se interessou pelo nosso trabalho? Deixe um recado :)</i></p>
+        <div class="w3-row w3-padding-32">
+            <div class="w3-col m6 w3-large w3-margin-bottom">
+                <i class="fa fa-map-marker" style="width:30px"></i> Belo Horizonte, MG<br>
+                @*<i class="fa fa-phone" style="width:30px"></i> Telefone: +00 151515<br>*@
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: douglasjtds@gmail.com<br>
+            </div>
+            <div class="w3-col m6">
+                <form action="/action_page.php" target="_blank">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Nome" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="text" placeholder="Mensagem" required name="Message">
+                    <button class="w3-button w3-black w3-section w3-right" type="submit">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+        <h1 class="w3-margin w3-xlarge">Prefeitura de Belo Horizonte: Governando Para Quem Precisa</h1>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+        <div class="w3-xlarge w3-padding-32">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        <p>Powered by <a href="https://github.com/douglasjtds/Hackaton_BHMap_WSS" target="_blank">While She Sleeps Guys - Hackathon</a></p>
+    </footer>
+
+    <script>
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+    @*<script>
+        function initMap() {
+            var uluru = { lat: -19.876191, lng: -43.927003 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 100,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+
+            marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+
+
+            var uluru2 = { lat: -44.03000166052033, lng: -19.91794624081266 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 100,
+                center: uluru2
+            });
+            var marker2 = new google.maps.Marker({
+                position: uluru2,
+                map: map
+            });
+
+            marker2.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
+
+        }
+    </script>*@
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwJZ0FLdy72DnOofQOM8mPOCP4R-MhlRE&callback=initMap">
+    </script>
+
+    @* Script pra mostrar mais de um ícone *@
+    <script>
+        var map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: new google.maps.LatLng(-19.873437, -43.924306),
+                mapTypeId: 'roadmap'
+            });
+
+            var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+            var mainIcon = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
+
+            var icons = {
+                parking: {
+                    icon: iconBase + 'parking_lot_maps.png'
+                },
+                library: {
+                    icon: iconBase + 'library_maps.png'
+                },
+                info: {
+                    icon: iconBase + 'info-i_maps.png'
+                },
+                yellowButton: {
+                    icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                }
+            };
+
+            var features = [
+              {
+                  position: new google.maps.LatLng(-19.876069, -43.928639),
+                  type: 'yellowButton'
+              }, {
+                  position: new google.maps.LatLng(-19.875837, -43.928060),
+                  type: 'yellowButton'
+              }, {
+                  position: new google.maps.LatLng(-19.873437, -43.924306),
+                  type: 'yellowButton'
+              }, {
+                  position: new google.maps.LatLng(-19.865839, -43.927228),
+                  type: 'yellowButton'
+              }, {
+                  position: new google.maps.LatLng(-19.863210, -43.925483),
+                  type: 'yellowButton'
+              }, {
+                  position: new google.maps.LatLng(-19.878798, -43.926089),
+                  type: 'yellowButton'
+              }, {
+                  position: new google.maps.LatLng(-19.857394, -43.941461),
+                  type: 'yellowButton'
+              }
+            ];
+
+            features.forEach(function (feature) {
+                var marker = new google.maps.Marker({
+                    position: feature.position,
+                    icon: icons[feature.type].icon,
+                    map: map
+                });
+            });
+        }
+
+    </script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwJZ0FLdy72DnOofQOM8mPOCP4R-MhlRE&callback=initMap">
+    </script>
+
+    @*<script src="~/Scripts/myScripts/connectFirebase.js"></script>*@
+
+</body>
+</html>
