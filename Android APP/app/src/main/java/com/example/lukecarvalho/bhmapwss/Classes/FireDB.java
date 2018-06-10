@@ -39,7 +39,7 @@ public class FireDB {
 //        fdb.getReference().child("chamdos").
     }
 
-    public Chamado getChamado(String chamadoID) {
+    public Chamado getChamado() {
 
 /*
         fdb.getReference("/COP/CHAMADO/"+chamadoID).addValueEventListener(new ValueEventListener() {

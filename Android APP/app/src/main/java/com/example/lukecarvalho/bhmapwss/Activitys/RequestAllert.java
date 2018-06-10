@@ -28,8 +28,6 @@ public class RequestAllert extends AppCompatActivity {
 
         Intent i = getIntent();
         call = (FireDB.Chamado) i.getExtras().getSerializable("CHAMADO");
-        agentID = call.getId();
-        setTitle(call.getTitle());
 
 
         TextView desk = findViewById(R.id.TVAlertDesc);
@@ -53,7 +51,8 @@ public class RequestAllert extends AppCompatActivity {
     }
 
     public void newAgente_Chamado () {
-        fdb.writeNew_agentId_chamado_Id(agentID,call.id);
+        String callID = "0011";
+        fdb.writeNew_agentId_chamado_Id(agentID,callID);
     }
 
 

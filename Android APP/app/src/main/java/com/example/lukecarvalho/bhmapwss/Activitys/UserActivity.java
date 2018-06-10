@@ -115,40 +115,9 @@ public class UserActivity extends AppCompatActivity {
     }
 
     private FireDB.Chamado getNewChamado() {
-        FireDB.Chamado call;
-
-        ValueEventListener postListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                FireDB.Chamado c = dataSnapshot.getValue(FireDB.Chamado.class);
-
-                if (dataSnapshot.getValue() != null) {
-                    fdbAgentCall = (HashMap<String, String>) dataSnapshot.getValue();
-                    String uID, cID;
-                    uID = (String) fdbAgentCall.get("AGENTID");
-                    cID = String("CHAMADO");
-
-                    System.out.println("SERVICE FIREBASE : " + uID);
-                    if (uID == userId) {
-
-                        call = fdb.getCall(uID);
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
-                    }
-                }
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        };
-        mPostReference.addValueEventListener(postListener);
 
 
-        return call;
+        return fdb.getChamado();
     }
 
 
