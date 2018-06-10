@@ -36,3 +36,6 @@
 - Douglas Tertuliano: <douglasjtds@gmail.com>
 - Matheus Pires: <matheuswith51@hotmail.com>
 - Lucas Henrique: <lucas.docs.mail@gmail.com>
+
+####### Equipe:
+WHILE SHE SLEEPS
