@@ -23,7 +23,7 @@ public class FireDB {
     }
 
     public void updateAgentLocation(String agentId, Double lat, Double lon) {
-        String path = "/COP/AGENTES/"+agentId+"/LOCALIZACAO";
+        String path = "/COP/AGENTES/" + agentId + "/LOCALIZACAO";
 
         fdb.getReference(path).child("LON").setValue(lon);
         fdb.getReference(path).child("LAT").setValue(lat);
@@ -40,21 +40,21 @@ public class FireDB {
     }
 
     public Chamado getChamado(String chamadoID) {
-        Chamado chamado;
 
+/*
         fdb.getReference("/COP/CHAMADO/"+chamadoID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.getValue(String.class);
+                String value  = dataSnapshot.getValue(String.class);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
-        return chamado;
+        return new Chamado("Carnaval", "Um monte de gente na rua!", "Praça Sete");
     }
 
     public class Agent {
@@ -76,12 +76,12 @@ public class FireDB {
     public class Chamado {
         public String title;
         public String descricao;
-        public String endereco;
+        public String ENDERECO;
 
         public Chamado(String title, String description, String endereco) {
             this.title = title;
             this.descricao = description;
-            this. = endereco;
+            this.ENDERECO = endereco;
         }
 
         public Chamado(String title) {
@@ -105,11 +105,11 @@ public class FireDB {
         }
 
         public String getEndereco() {
-            return endereco;
+            return ENDERECO;
         }
 
         public void setEndereco(String endereco) {
-            this.endereco = endereco;
+            this.ENDERECO = endereco;
         }
 
     }
