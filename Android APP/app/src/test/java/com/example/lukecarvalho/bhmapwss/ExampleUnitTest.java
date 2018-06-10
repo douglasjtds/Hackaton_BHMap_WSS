@@ -1,4 +1,4 @@
-package com.example.lukecarvalho.hackaton_bhmap_wss;
+package com.example.lukecarvalho.bhmapwss;
 
 import org.junit.Test;
 
