@@ -17,7 +17,7 @@
 
 
 #### Aplicação Web
-- Deverá ser usada no COP-BH, onde os funcionários receberão o registro de novas ocorrências cadastradas pelos cidadãos e pela própria aplicação web serão capazes de direcionar o atendimento aos agentes mais apropriados.
+- Deverá ser usada no **COP-BH**, onde os funcionários receberão o registro de novas ocorrências cadastradas pelos cidadãos e pela própria aplicação web serão capazes de direcionar o atendimento aos agentes mais apropriados.
 - Na seção "Mapa da Cidade", do site, deverá ser mostrado os pontos onde os agentes municipais se encontram.
 
 ### Necessário para utilização
