@@ -10,6 +10,17 @@
     Será criado um sistema facilitador, para uso do Centro Integrado de Operações de Belo Horizonte(COP-BH), para que o funcionário no COP possa alocar uma ocorrência para o agente correto e que esteja mais próximo da localidade.
 </p>
 
+### Necessário para utilização
+- Key para utilização da API do Google
+<img src="keyAPI_Google.jpg" title="Gramática Corrigida">
+
+### Ferramentas utilizadas
+- Firebase
+- Android Studio
+- Visual Studio
+- Visual Code
+- SQL Server
+
 ###### Contato dos Criadores
 - Douglas Tertuliano: <douglasjtds@gmail.com>
 - Matheus Pires: <matheuswith51@hotmail.com>
